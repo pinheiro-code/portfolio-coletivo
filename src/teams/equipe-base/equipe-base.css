@@ -1,0 +1,165 @@
+/* Página da Equipe Base. Classes com o prefixo base- para não afetar as outras equipes. */
+.base-pagina {
+  padding-bottom: 1rem;
+}
+
+.base-abertura {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1.5rem 0 3rem;
+}
+
+.base-abertura h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin: 0.3rem 0 1rem;
+}
+
+.base-selo {
+  display: inline-block;
+  margin: 0;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: #eaf2ff;
+  color: var(--azul);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.base-chamada {
+  max-width: 58ch;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+}
+
+.base-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 1.8rem;
+  font-weight: 600;
+}
+
+.base-marca {
+  display: grid;
+  place-items: center;
+  width: clamp(8rem, 20vw, 12rem);
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #f3f8ff, #d6e4ff);
+  border: 1px solid #c3d6f5;
+  font-size: clamp(3.5rem, 9vw, 5.5rem);
+  box-shadow: 0 16px 40px rgb(11 36 71 / 0.12);
+}
+
+.base-secao {
+  padding: 2.75rem 0;
+  border-top: 1px solid var(--borda);
+}
+
+.base-secao > h2 {
+  margin-top: 0;
+}
+
+.base-secao > p {
+  max-width: 70ch;
+}
+
+.base-recursos,
+.base-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: 1.25rem 2.5rem;
+}
+
+.base-recursos li {
+  padding-left: 1rem;
+  border-left: 3px solid var(--azul);
+}
+
+.base-recursos strong {
+  color: var(--azul-escuro);
+}
+
+.base-recursos p {
+  margin: 0.3rem 0 0;
+  color: var(--texto-suave);
+}
+
+.base-checklist {
+  gap: 0.9rem 2.5rem;
+}
+
+.base-checklist li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.base-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--azul);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.base-checklist strong {
+  color: var(--azul-escuro);
+}
+
+.base-checklist span {
+  color: var(--texto-suave);
+}
+
+.base-tecnologias {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.base-tecnologias li {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: var(--superficie);
+  font-size: 0.9rem;
+}
+
+.base-subtitulo {
+  margin: 2rem 0 1rem;
+}
+
+.base-pagina .grade-fichas {
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .base-abertura {
+    grid-template-columns: 1fr;
+    padding-bottom: 2rem;
+  }
+
+  .base-marca {
+    display: none;
+  }
+}
