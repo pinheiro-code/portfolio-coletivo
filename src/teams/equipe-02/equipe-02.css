@@ -1,0 +1,454 @@
+/* Equipe 02: tudo fica sob .equipe-02-raiz para não afetar (nem herdar) estilos de outras equipes. */
+.equipe-02-raiz {
+  --eq02-azul: #0649ee; /* o mesmo azul do Portal */
+  --eq02-azul-escuro: #0436b3;
+  --eq02-tinta: #14213d;
+  --eq02-tinta-suave: #4a5672;
+  --eq02-papel: #f5f7fb;
+  --eq02-linha: #d5ddea;
+  --eq02-aprovado: #1e8a5a; /* só para "aprovado" */
+  --eq02-analise: #b26a00; /* só para "em análise" */
+  --eq02-fonte-titulo: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --eq02-fonte-texto: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+
+  color: var(--eq02-tinta);
+  font-family: var(--eq02-fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-align: left;
+  padding: 1rem 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.equipe-02-raiz *,
+.equipe-02-raiz *::before,
+.equipe-02-raiz *::after {
+  box-sizing: border-box;
+}
+
+.equipe-02-raiz :is(h1, h2, h3, p, ul, ol) {
+  margin: 0;
+  color: inherit;
+}
+
+.equipe-02-raiz p {
+  max-width: 64ch;
+}
+
+.equipe-02-raiz p + p {
+  margin-top: 1rem;
+}
+
+.equipe-02-raiz a {
+  color: var(--eq02-azul);
+  text-underline-offset: 0.2em;
+}
+
+.equipe-02-raiz a:hover {
+  color: var(--eq02-azul-escuro);
+}
+
+.equipe-02-raiz a:focus-visible,
+.equipe-02-raiz button:focus-visible {
+  outline: 3px solid var(--eq02-azul);
+  outline-offset: 3px;
+}
+
+.equipe-02-pagina {
+  max-width: 60rem;
+}
+
+/* ---------- Vídeo (componente VideoReferencia da Equipe Base) ---------- */
+.equipe-02-video {
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.equipe-02-video figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--eq02-tinta-suave);
+  max-width: 72ch;
+}
+
+/* ---------- Títulos ---------- */
+.equipe-02-cabeca {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.equipe-02-raiz .equipe-02-titulo {
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  max-width: 16ch;
+}
+
+.equipe-02-raiz .equipe-02-lead {
+  font-size: clamp(1.125rem, 2.2vw, 1.3125rem);
+  line-height: 1.5;
+}
+
+.equipe-02-secao {
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--eq02-linha);
+}
+
+.equipe-02-raiz .equipe-02-subtitulo {
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Trilha "Como funciona" ---------- */
+.equipe-02-raiz .equipe-02-trilha {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.equipe-02-etapa {
+  position: relative;
+}
+
+/* trecho de linha até a próxima etapa: cinza, e se enche de azul em sequência */
+.equipe-02-etapa:not(:last-child)::before,
+.equipe-02-etapa:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: calc(1.1rem - 1px);
+  left: 2.2rem;
+  width: calc(100% + 1.5rem - 2.2rem);
+  height: 2px;
+  background: var(--eq02-linha);
+}
+
+.equipe-02-etapa:not(:last-child)::after {
+  background: var(--eq02-azul);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: calc(var(--i) * 0.4s + 0.15s);
+}
+
+.equipe-02-trilha-ativa .equipe-02-etapa::after {
+  transform: scaleX(1);
+}
+
+.equipe-02-etapa-numero {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--eq02-papel);
+  border: 2px solid var(--eq02-linha);
+  color: var(--eq02-tinta-suave);
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  transition-delay: calc(var(--i) * 0.4s);
+}
+
+.equipe-02-trilha-ativa .equipe-02-etapa-numero {
+  background: var(--eq02-azul);
+  border-color: var(--eq02-azul);
+  color: #fff;
+}
+
+.equipe-02-raiz .equipe-02-etapa-titulo {
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.equipe-02-raiz .equipe-02-etapa-texto {
+  font-size: 0.975rem;
+  color: var(--eq02-tinta-suave);
+  margin-bottom: 1rem;
+}
+
+/* selo com a situação do certificado em cada etapa */
+.equipe-02-selo {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  border: 1.5px solid var(--eq02-azul);
+  color: var(--eq02-azul);
+}
+
+.equipe-02-selo-analise {
+  border-color: var(--eq02-analise);
+  color: var(--eq02-analise);
+}
+
+.equipe-02-selo-aprovado {
+  border-color: var(--eq02-aprovado);
+  color: var(--eq02-aprovado);
+}
+
+.equipe-02-barras {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.equipe-02-barra-linha {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr 2.6rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.equipe-02-barra-nome {
+  color: var(--eq02-tinta-suave);
+}
+
+.equipe-02-barra-horas {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.equipe-02-barra-trilho {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--eq02-linha);
+  overflow: hidden;
+}
+
+.equipe-02-barra-cheia {
+  display: block;
+  height: 100%;
+  background: var(--eq02-aprovado);
+  border-radius: inherit;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.5s;
+}
+
+.equipe-02-trilha-ativa .equipe-02-barra-cheia {
+  transform: scaleX(var(--p));
+}
+
+/* ---------- Quem usa ---------- */
+.equipe-02-publicos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.equipe-02-raiz .equipe-02-publico-titulo {
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--eq02-azul);
+}
+
+.equipe-02-raiz .equipe-02-lista {
+  padding-left: 1.1rem;
+}
+
+.equipe-02-lista li {
+  margin-bottom: 0.35rem;
+}
+
+.equipe-02-lista li::marker {
+  color: var(--eq02-azul);
+}
+
+/* ---------- Rodapé da página ---------- */
+.equipe-02-rodape {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--eq02-linha);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* na página Time, a lista já fecha com uma linha: o rodapé não precisa de outra */
+.equipe-02-rodape-time {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 2rem;
+}
+
+.equipe-02-link-repo {
+  font-weight: 600;
+}
+
+.equipe-02-botao,
+.equipe-02-botao-secundario {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.75rem 1.4rem;
+  border: 2px solid var(--eq02-azul);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.equipe-02-botao {
+  background: var(--eq02-azul);
+  color: #fff;
+  margin-left: auto;
+}
+
+.equipe-02-botao:hover {
+  background: var(--eq02-azul-escuro);
+  border-color: var(--eq02-azul-escuro);
+}
+
+.equipe-02-botao-secundario {
+  background: transparent;
+  color: var(--eq02-azul);
+}
+
+.equipe-02-botao-secundario:hover {
+  background: var(--eq02-azul);
+  color: #fff;
+}
+
+/* ---------- Página Time ---------- */
+.equipe-02-raiz .equipe-02-time {
+  list-style: none;
+  padding: 0;
+}
+
+.equipe-02-membro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--eq02-linha);
+}
+
+.equipe-02-membro:last-child {
+  border-bottom: 1px solid var(--eq02-linha);
+}
+
+.equipe-02-avatar {
+  width: clamp(3.5rem, 8vw, 4.75rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--eq02-tinta);
+  color: #fff;
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  letter-spacing: 0.02em;
+}
+
+.equipe-02-avatar-foto {
+  width: clamp(4.5rem, 11vw, 6.5rem);
+  display: block;
+  height: auto;
+  object-fit: cover;
+  background: var(--eq02-linha);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px var(--eq02-linha);
+}
+
+.equipe-02-raiz .equipe-02-membro-nome {
+  font-family: var(--eq02-fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.6vw, 1.625rem);
+  line-height: 1.2;
+  margin: 0.2rem 0 0.25rem;
+}
+
+.equipe-02-raiz .equipe-02-membro-nome a {
+  color: var(--eq02-tinta);
+  text-decoration-color: var(--eq02-linha);
+  text-decoration-thickness: 2px;
+}
+
+.equipe-02-raiz .equipe-02-membro-nome a:hover {
+  color: var(--eq02-azul);
+  text-decoration-color: var(--eq02-azul);
+}
+
+.equipe-02-raiz .equipe-02-membro-papel {
+  font-weight: 600;
+  color: var(--eq02-azul);
+  margin-bottom: 0.35rem;
+}
+
+.equipe-02-raiz .equipe-02-membro-fez {
+  color: var(--eq02-tinta-suave);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 760px) {
+  .equipe-02-raiz .equipe-02-trilha {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-left: 3.25rem;
+  }
+
+  .equipe-02-etapa-numero {
+    position: absolute;
+    left: -3.25rem;
+    top: -0.3rem;
+  }
+
+  /* na vertical, o trecho desce do número até o número da etapa seguinte */
+  .equipe-02-etapa:not(:last-child)::before,
+  .equipe-02-etapa:not(:last-child)::after {
+    top: 1.9rem;
+    bottom: -1.45rem;
+    left: calc(-2.15rem - 1px);
+    width: 2px;
+    height: auto;
+  }
+
+  .equipe-02-etapa:not(:last-child)::after {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  .equipe-02-trilha-ativa .equipe-02-etapa::after {
+    transform: scaleY(1);
+  }
+
+  .equipe-02-publicos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .equipe-02-botao {
+    margin-left: 0;
+  }
+}
+
+/* Quem desativa animações vê tudo pronto */
+@media (prefers-reduced-motion: reduce) {
+  .equipe-02-etapa::after,
+  .equipe-02-etapa-numero,
+  .equipe-02-barra-cheia {
+    transition: none !important;
+  }
+}
