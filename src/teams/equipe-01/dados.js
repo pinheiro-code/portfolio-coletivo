@@ -2,11 +2,11 @@
 
 // Link do vídeo no YouTube (pode ser "não listado"). Enquanto estiver vazio, a página mostra um aviso.
 export const video = {
-  url: '',
+  url: 'https://youtu.be/RKLaYxFGT-M',
   titulo: 'Gestio: sistema de gestão para pequenos negócios',
   referencia:
-    'Vídeo produzido com IA a partir do próprio Gestio: roteiro, slides e montagem feitos pela equipe com o Claude (Anthropic), ' +
-    'narração por síntese de voz (Piper, voz pt-BR Edresson, licença CC BY 4.0) e telas reais do sistema. ' +
+    'Vídeo produzido a partir do próprio Gestio: roteiro, demonstração e montagem feitos pela equipe com o Claude (Anthropic), ' +
+    'narração por Marcelo e telas reais do sistema. ' +
     'Tema: o problema do controle manual em pequenos negócios e como o Gestio resolve.',
 }
 
