@@ -1,0 +1,192 @@
+/* Tudo da Equipe 01 fica sob .equipe-01-pagina, para não mexer nas páginas das outras equipes.
+   Cores tiradas do próprio Gestio: azul-marinho do menu e laranja dos botões. */
+.equipe-01-pagina {
+  --eq01-marinho: #14213d;
+  --eq01-laranja: #f2a65a;
+  --eq01-laranja-forte: #b5631a;
+  --eq01-suave: #55607a;
+  --eq01-linha: #dde1ea;
+  --eq01-fundo: #f6f5f1;
+  color: #1c2333;
+  text-align: left;
+}
+
+.equipe-01-pagina h1,
+.equipe-01-pagina h2,
+.equipe-01-pagina h3 {
+  color: var(--eq01-marinho);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.equipe-01-pagina a {
+  color: var(--eq01-laranja-forte);
+  text-underline-offset: 0.2em;
+}
+
+.equipe-01-abertura {
+  background: var(--eq01-marinho);
+  color: #e8ecf4;
+  border-radius: 1rem;
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.equipe-01-pagina .equipe-01-abertura h1 {
+  color: #fff;
+  font-size: clamp(2.75rem, 9vw, 4.75rem);
+  letter-spacing: -0.03em;
+  margin: 0.25rem 0 0;
+}
+
+.equipe-01-rotulo {
+  color: var(--eq01-laranja);
+  font-weight: 700;
+  margin: 0;
+}
+
+.equipe-01-chamada {
+  font-size: clamp(1.125rem, 2.6vw, 1.375rem);
+  line-height: 1.45;
+  max-width: 36ch;
+  margin: 1rem 0 0;
+}
+
+.equipe-01-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.equipe-01-pagina .equipe-01-acoes a {
+  color: #fff;
+}
+
+.equipe-01-pagina .equipe-01-acoes .equipe-01-botao {
+  background: var(--eq01-laranja);
+  color: var(--eq01-marinho);
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.equipe-01-pagina .equipe-01-acoes .equipe-01-botao:hover {
+  background: #e6954a;
+}
+
+.equipe-01-login {
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+  color: #b9c3d6;
+}
+
+.equipe-01-login code {
+  background: #22335a;
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  overflow-wrap: anywhere;
+}
+
+.equipe-01-secao {
+  padding: 2.75rem 0;
+  border-top: 1px solid var(--eq01-linha);
+}
+
+.equipe-01-pagina .equipe-01-secao:first-of-type {
+  border-top: 0;
+}
+
+.equipe-01-pagina .equipe-01-secao h2 {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  margin: 0 0 1.25rem;
+}
+
+.equipe-01-pagina .equipe-01-secao h3 {
+  font-size: 1.2rem;
+  margin: 2.25rem 0 1rem;
+}
+
+.equipe-01-texto {
+  max-width: 68ch;
+}
+
+.equipe-01-texto p {
+  margin: 0 0 0.9rem;
+}
+
+.equipe-01-grade {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.equipe-01-grade li {
+  background: var(--eq01-fundo);
+  border-left: 4px solid var(--eq01-laranja);
+  border-radius: 0.5rem;
+  padding: 1rem 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.equipe-01-grade strong {
+  color: var(--eq01-marinho);
+}
+
+.equipe-01-grade span {
+  color: var(--eq01-suave);
+}
+
+.equipe-01-telas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.25rem;
+}
+
+.equipe-01-telas figure {
+  margin: 0;
+}
+
+.equipe-01-telas img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.6rem;
+  border: 1px solid var(--eq01-linha);
+  box-shadow: 0 6px 18px rgb(20 33 61 / 0.12);
+}
+
+.equipe-01-telas figcaption {
+  font-size: 0.92rem;
+  color: var(--eq01-suave);
+  margin-top: 0.5rem;
+}
+
+.equipe-01-tecnologias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem 2rem;
+  margin: 0;
+}
+
+.equipe-01-tecnologias div {
+  border-top: 2px solid var(--eq01-marinho);
+  padding-top: 0.6rem;
+}
+
+.equipe-01-tecnologias dt {
+  font-weight: 700;
+  color: var(--eq01-marinho);
+}
+
+.equipe-01-tecnologias dd {
+  margin: 0.2rem 0 0;
+  color: var(--eq01-suave);
+}
